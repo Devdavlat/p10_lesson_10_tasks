@@ -69,8 +69,10 @@ class Netflix:
 
         result = []
         for i in file:
-            temp_number = (i.get('country')).split(',')
+            country = 'United States'
+            temp_country_name = (i.get('country')).split(',')
             temp_type = i.get('type')
+            type_ = 'Movie'
 
             if country in temp_country_name and temp_type == type_:
                 result.append(i)
@@ -89,24 +91,4 @@ netflix_obj = Netflix('netflix_titles.csv')
 # print(netflix_obj.get_release_year_20_21())
 print(netflix_obj.get_data_by_country_and_type())
 
-# def get_order_date():
-#     info = get_full_info()
-#     result = []
-#     data = "04/10/19"
-#     for i in info:
-#         if i.get("Order Date") > data:
-#             result.append(i)
-#     return result
-#
-#
-# def write_order_date():
-#     order_date = [i for i in get_order_date()]
-#     columns = [i for i in order_date[0]]
-#     try:
-#         with open("order_date.csv", "w", newline="") as files:
-#             writer = csv.DictWriter(files, fieldnames=columns)
-#             writer.writeheader()
-#             writer.writerows(order_date)
-#     except FileNotFoundError as e:
-#         write_exceptions(e)
-#     return files
+
