@@ -1,0 +1,1 @@
+name : <class 'Exception'> , meaning : 'charmap' codec can't encode character '\u0107' in position 103: character maps to <undefined>
